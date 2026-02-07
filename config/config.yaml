@@ -1,0 +1,27 @@
+binance:
+  api_key: 'YOUR_ED25519_API_KEY'
+  ws_base_url: 'wss://stream-sbe.binance.com:9443'
+  symbols:
+    - btcusdt
+    - ethusdt
+  streams:
+    - bestBidAsk # Phase 1
+    # - trade             # Phase 2
+    # - depth             # Phase 3
+    # - depth20           # Phase 3
+
+connection:
+  reconnect_delay_initial: 1.0 # seconds
+  reconnect_delay_max: 60.0 # seconds
+  reconnect_delay_multiplier: 2.0
+  max_reconnect_attempts: 0 # 0 = infinite
+  preemptive_reconnect_hours: 23.5 # reconnect before 24h limit
+
+publisher:
+  uds_path: '/tmp/binance_feed.sock'
+  max_clients: 10
+  write_timeout: 0.1 # seconds; drop client if write blocks
+
+logging:
+  level: 'INFO' # DEBUG, INFO, WARNING, ERROR
+  format: 'console' # json or console
