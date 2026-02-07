@@ -1,0 +1,19 @@
+binance:
+  base_url: "wss://stream.binance.com:9443"
+  symbols:
+    - btcusdt
+  streams:
+    - bookTicker
+
+connection:
+  max_retries: 10
+  base_backoff_seconds: 1.0
+  max_backoff_seconds: 60.0
+  preemptive_reconnect_hours: 23.5
+
+publisher:
+  uds_path: "/tmp/binance_feed.sock"
+
+logging:
+  level: "info"
+  format: "console"
