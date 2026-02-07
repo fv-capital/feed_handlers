@@ -12,7 +12,8 @@ connection:
   preemptive_reconnect_hours: 23.5
 
 publisher:
-  uds_path: "/tmp/binance_feed.sock"
+  book_ticker_uds_path: "/tmp/binance_book_ticker.sock"
+  rolling_ticker_uds_path: "/tmp/binance_rolling_ticker.sock"
 
 logging:
   level: "info"
